@@ -1,0 +1,59 @@
+06/12/2022-23:50:40] [I] Building and running a GPU inference engine for Onnx MNIST
+[06/12/2022-23:50:40] [I] [TRT] [MemUsageChange] Init CUDA: CPU +458, GPU +0, now: CPU 469, GPU 504 (MiB)
+[06/12/2022-23:50:40] [I] [TRT] [MemUsageSnapshot] Begin constructing builder kernel library: CPU 469 MiB, GPU 504 MiB
+[06/12/2022-23:50:40] [I] [TRT] [MemUsageSnapshot] End constructing builder kernel library: CPU 623 MiB, GPU 548 MiB
+[06/12/2022-23:50:41] [I] [TRT] ----------------------------------------------------------------
+[06/12/2022-23:50:41] [I] [TRT] Input filename:   ../../../model-sim.onnx
+[06/12/2022-23:50:41] [I] [TRT] ONNX IR version:  0.0.7
+[06/12/2022-23:50:41] [I] [TRT] Opset version:    12
+[06/12/2022-23:50:41] [I] [TRT] Producer name:    pytorch
+[06/12/2022-23:50:41] [I] [TRT] Producer version: 1.10
+[06/12/2022-23:50:41] [I] [TRT] Domain:           
+[06/12/2022-23:50:41] [I] [TRT] Model version:    0
+[06/12/2022-23:50:41] [I] [TRT] Doc string:       
+[06/12/2022-23:50:41] [I] [TRT] ----------------------------------------------------------------
+[06/12/2022-23:50:41] [W] [TRT] onnx2trt_utils.cpp:366: Your ONNX model has been generated with INT64 weights, while TensorRT does not natively support INT64. Attempting to cast down to INT32.
+[06/12/2022-23:50:43] [W] [TRT] Output type must be INT32 for shape outputs
+network bindings: Unnamed Network 0
+network input name: input_ids
+network input dimensions: 2
+network input dimensions dim0: -1
+network input dimensions dim1: -1
+network input name: logits
+network no inputs : 1
+network no outputs : 1
+network input is shape tensor: 0
+[06/12/2022-23:50:44] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +815, GPU +352, now: CPU 1951, GPU 900 (MiB)
+[06/12/2022-23:50:45] [I] [TRT] [MemUsageChange] Init cuDNN: CPU +447, GPU +342, now: CPU 2398, GPU 1242 (MiB)
+[06/12/2022-23:50:45] [I] [TRT] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[06/12/2022-23:51:06] [I] [TRT] Detected 1 inputs and 1 output network tensors.
+[06/12/2022-23:51:06] [I] [TRT] Total Host Persistent Memory: 32
+[06/12/2022-23:51:06] [I] [TRT] Total Device Persistent Memory: 0
+[06/12/2022-23:51:06] [I] [TRT] Total Scratch Memory: 788096
+[06/12/2022-23:51:06] [I] [TRT] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 0 MiB, GPU 512 MiB
+[06/12/2022-23:51:06] [I] [TRT] [BlockAssignment] Algorithm ShiftNTopDown took 0.013839ms to assign 2 blocks to 2 nodes requiring 788992 bytes.
+[06/12/2022-23:51:06] [I] [TRT] Total Activation Memory: 788992
+[06/12/2022-23:51:06] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +8, now: CPU 2906, GPU 1772 (MiB)
+[06/12/2022-23:51:06] [I] [TRT] [MemUsageChange] Init cuDNN: CPU +0, GPU +8, now: CPU 2906, GPU 1780 (MiB)
+[06/12/2022-23:51:06] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in building engine: CPU +0, GPU +512, now: CPU 0, GPU 512 (MiB)
+creating infer runtime
+[06/12/2022-23:51:07] [I] [TRT] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3412, GPU 1234 (MiB)
+[06/12/2022-23:51:07] [I] [TRT] Loaded engine size: 1014 MiB
+[06/12/2022-23:51:07] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +10, now: CPU 3919, GPU 1752 (MiB)
+[06/12/2022-23:51:07] [I] [TRT] [MemUsageChange] Init cuDNN: CPU +1, GPU +8, now: CPU 3920, GPU 1760 (MiB)
+[06/12/2022-23:51:07] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +507, now: CPU 0, GPU 507 (MiB)
+input dims: 2
+output dims: 3
+-1
+-1
+30522
+
+[06/12/2022-23:51:07] [I] [TRT] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +8, now: CPU 2241, GPU 1732 (MiB)
+[06/12/2022-23:51:07] [I] [TRT] [MemUsageChange] Init cuDNN: CPU +0, GPU +8, now: CPU 2241, GPU 1740 (MiB)
+[06/12/2022-23:51:07] [I] [TRT] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +0, now: CPU 0, GPU 507 (MiB)
+copy to binding host mem done.
+copy input to device done
+executeV2 done
+cost 1.449millisec.
+copy output to host done
+&&&& PASSED TensorRT.sample_onnx_mnist [TensorRT v8400] # ./sampleonnxbert -d ../../../
